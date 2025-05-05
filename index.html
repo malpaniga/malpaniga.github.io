@@ -39,6 +39,7 @@
             text-align: center;
             padding: 4rem 2rem;
             margin-top: 80px;
+            position: relative;
         }
         .container {
             max-width: 1200px;
@@ -75,6 +76,7 @@
             color: white;
             text-align: center;
             padding: 1rem;
+            margin-top: 2rem;
         }
         form {
             max-width: 600px;
@@ -109,27 +111,64 @@
         form button:hover {
             background-color: #218838;
         }
+        /* Call-to-Action Button */
+        .contact-cta {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .btn-call {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #00A85A, #00D084);
+            color: white;
+            padding: 0.75rem 1.25rem;
+            border-radius: 50px;
+            font-size: 1.125rem;
+            font-weight: 600;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: pulse 2.5s infinite;
+            transition: transform 0.2s;
+        }
+        .btn-call:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+        }
+        .phone-icon {
+            width: 1.4em;
+            height: 1.4em;
+            margin-right: 0.5em;
+            fill: currentColor;
+        }
+        .btn-call small {
+            display: block;
+            font-size: 0.75rem;
+            opacity: 0.85;
+            margin-left: 0.25em;
+        }
+        @keyframes pulse {
+          0%, 100% { box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+          50% { box-shadow: 0 0 0 8px rgba(0, 216, 132, 0.3); }
+        }
+        /* Mobile floating CTA */
         @media (max-width: 768px) {
-            .hero {
-                padding: 2rem 1rem;
-                margin-top: 100px;
-            }
-            nav ul {
-                flex-wrap: wrap;
-                justify-content: space-between;
-                padding: 0 1rem;
-            }
+          .contact-cta {
+            position: fixed;
+            bottom: 1.5rem;
+            right: 1.5rem;
+            margin: 0;
+            z-index: 1001;
+          }
         }
     </style>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZB5NDBR1W"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-SZB5NDBR1W');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZB5NDBR1W"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-SZB5NDBR1W');
+    </script>
 </head>
 <body>
     <header>
@@ -145,132 +184,122 @@
     </header>
 
     <main>
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <h1>Simplex Solar</h1>
             <p>Powering India's Future with Clean, Affordable Solar Energy</p>
             <a href="#contact" class="btn">Get Started</a>
+
+            <!-- Hero CTA -->
+            <div class="contact-cta">
+              <a href="tel:+919322181822" class="btn-call" aria-label="Call us now at +91 93 22 18 18 22">
+                <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.6 10.8a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011.1-.2 11.36 11.36 0 003.5.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.8a1 1 0 011 1 11.36 11.36 0 00.6 3.5 1 1 0 01-.2 1.1L6.6 10.8z"/>
+                </svg>
+                <span>Call Us Now</span>
+                <small>+91 93 22 18 18 22</small>
+              </a>
+            </div>
         </section>
 
+        <!-- Services Section -->
         <section id="services" class="container">
             <h2>Our Services</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Solar Panel Installation</h3>
-                    <p>High-efficiency solar panels tailored to Indian homes and businesses.</p>
-                    <img src="house-installing-solar.jpg" alt="Solar Panel Installation">
+                    <h3>Residential Solar</h3>
+                    <p>Customized solar solutions for homes to reduce electricity bills and carbon footprint.</p>
                 </div>
                 <div class="card">
-                    <h3>Battery Storage</h3>
-                    <p>Reliable power storage solutions for uninterrupted energy supply.</p>
-                    <img src="Battery.jpg" alt="Battery Storage System">
+                    <h3>Commercial Solar</h3>
+                    <p>High-efficiency solar installations tailored for businesses and industries.</p>
                 </div>
                 <div class="card">
-                    <h3>Energy Management</h3>
-                    <p>Smart systems to optimize your energy consumption and reduce bills.</p>
-                    <img src="Energy Management-2.svg" alt="Energy Management System">
+                    <h3>Maintenance & Support</h3>
+                    <p>Comprehensive maintenance plans and 24/7 support for uninterrupted power.</p>
                 </div>
             </div>
         </section>
 
+        <!-- On-Grid Solar Section -->
         <section id="on-grid-solar" class="container">
             <h2>On-Grid Solar Solutions</h2>
             <div class="grid">
                 <div class="card">
-                    <h3>Residential On-Grid Solar</h3>
-                    <ul>
-                        <li>Reduce your electricity bills significantly.</li>
-                        <li>Sell excess power back to the grid.</li>
-                        <li>Increase your property value.</li>
-                        <li>Benefit from government incentives.</li>
-                    </ul>
-                    <img src="house-solar-cell-system-png.png" alt="Residential Solar Installation">
+                    <h3>Net Metering</h3>
+                    <p>Feed excess power back to the grid and earn credits on your bill.</p>
                 </div>
                 <div class="card">
-                    <h3>Commercial On-Grid Solar</h3>
-                    <ul>
-                        <li>Lower operational costs for your business.</li>
-                        <li>Enhance your corporate social responsibility.</li>
-                        <li>Stable energy prices for long-term planning.</li>
-                        <li>Quick return on investment.</li>
-                    </ul>
-                    <img src="factory-vector.jpg" alt="Commercial Solar Installation">
+                    <h3>Grid-Tied Panels</h3>
+                    <p>Efficient panels designed to work seamlessly with the local grid.</p>
                 </div>
             </div>
         </section>
 
-<!--------------------------------------------------------------------------------------------------------------------------------->
-
-<!--------------------------------------------------------------------------------------------------------------------------------->
-
+        <!-- Subsidy Section -->
         <section id="subsidy" class="container">
             <h2>Government Subsidy for Solar Installation</h2>
-            <p>The Indian government offers attractive subsidies through the PM-SURYAGHAR scheme to promote solar adoption:</p>
+            <p>Avail up to 40% subsidy on solar installations under the MNRE scheme.</p>
             <div class="grid">
                 <div class="card">
                     <h3>Residential Subsidy</h3>
-                    <ul>
-                        <li>₹30,000 subsidy for 1kW capacity solar systems.</li>
-                        <li>₹60,000 subsidy for 2kW capacity solar systems.</li>
-                        <li>₹78,000 subsidy for systems between 3kW to 10kW.</li>
-                    </ul>
+                    <p>Eligible households can claim up to ₹1.2 lakh subsidy.</p>
                 </div>
                 <div class="card">
-                    <h3>Additional Benefits</h3>
-                    <ul>
-                        <li>No upper cap on system capacity for subsidy.</li>
-                        <li>Concessional loans available through nationalized banks.</li>
-                        <li>Net metering facility for grid-connected systems.</li>
-                    </ul>
+                    <h3>Commercial Subsidy</h3>
+                    <p>Businesses can claim up to ₹7 lakh subsidy on large-scale installations.</p>
                 </div>
             </div>
         </section>
 
+        <!-- Contact Form Section -->
         <section id="contact" class="container">
             <h2>On-Grid Solar System Quotation Request</h2>
             <form action="https://formspree.io/f/xwpkrarp" method="POST">
-                <label for="name">Full Name:</label>
+                <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required>
 
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
 
-                <label for="phone">Phone Number:</label>
-                <input type="tel" id="phone" name="phone" pattern="\d{10}" maxlength="10" title="Enter a 10-digit phone number" required>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
 
-                <label for="system_type">Select System Type:</label>
-                <select id="system_type" name="system_type" required>
-                    <option value="">-- Select --</option>
-                    <option value="residential">Residential</option>
-                    <option value="commercial">Commercial</option>
-                </select>
+                <label for="location">Installation Location</label>
+                <input type="text" id="location" name="location" required>
 
-                <label for="capacity">Select Solar Capacity (in kW):</label>
-                <select id="capacity" name="capacity" required>
-                    <option value="">-- Select Capacity --</option>
+                <label for="system">System Capacity (kW)</label>
+                <select id="system" name="system" required>
                     <option value="1">1 kW</option>
                     <option value="2">2 kW</option>
                     <option value="3">3 kW</option>
                     <option value="5">5 kW</option>
-                    <option value="5">6 kW</option>
-                    <option value="10">10 kW</option>
-                    <option value="20">20 kW</option>
+                    <option value="10">10 kW+</option>
                 </select>
 
-                <label for="details">Additional Details:</label>
-                <textarea id="details" name="details" rows="4"></textarea>
+                <label for="message">Additional Details</label>
+                <textarea id="message" name="message" rows="4"></textarea>
 
                 <button type="submit">Request Quotation</button>
-				<h2>Contact: +91 93 22 18 18 22 | info@simplexsolar.in</h2>
             </form>
-			
+
+            <!-- Inline CTA under form -->
+            <div class="contact-cta">
+              <a href="tel:+919322181822" class="btn-call" aria-label="Call us now at +91 93 22 18 18 22">
+                <svg class="phone-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M6.6 10.8a15.05 15.05 0 006.6 6.6l2.2-2.2a1 1 0 011.1-.2 11.36 11.36 0 003.5.6 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.8a1 1 0 011 1 11.36 11.36 0 00.6 3.5 1 1 0 01-.2 1.1L6.6 10.8z"/>
+                </svg>
+                <span>Call Us Now</span>
+                <small>+91 93 22 18 18 22</small>
+              </a>
+            </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Simplex Solar. All rights reserved.</p>
-        <p>Contact: +91 9322181822 | info@simplexsolar.in</p>
-	<p>Head Office - Near Balaji Temple, Deo Peth, Washim, Maharashtra - 444505</p>
-        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        <p>&copy; 2025 Simplex Solar. All rights reserved.</p>
+        <p>Contact: <a href="tel:+919322181822" style="color: #fff; text-decoration: underline;">+91 93 22 18 18 22</a> | <a href="mailto:info@simplexsolar.in" style="color: #fff; text-decoration: underline;">info@simplexsolar.in</a></p>
     </footer>
 </body>
 </html>
